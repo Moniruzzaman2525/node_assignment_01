@@ -13,11 +13,15 @@ app.use(cors());
 app.use(express.json());
 
 //handle application errors
-app.use(errorHandler)
+app.use(errorHandler);
 
 // dynamic api routes
-app.use("/api/v1", usersRoutes );
+app.use("/api/v1", usersRoutes);
 
+/* check api */
+app.get("/", (req, res) => {
+  res.send("Hello Monir");
+});
 //create server
 app.listen(port, () => console.log(`Listening on Port: ${port}`));
 
